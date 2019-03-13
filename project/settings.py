@@ -25,7 +25,7 @@ SECRET_KEY = '6!3!jq$3e9w)5z*#eo07&0oam2_9^pgs8+hf97qtzplotp!b^j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-react-poc.herokuapp.com']
 
 
 # Application definition

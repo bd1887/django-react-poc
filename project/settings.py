@@ -134,9 +134,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
 CORS_ORIGIN_ALLOW_ALL = True
 
-import dj_database_url 
-DATABASES['default'] = dj_database_url.config()
-
-
-# Activate Django-Heroku.
+# Configure Django App for Heroku.
+import django_heroku
 django_heroku.settings(locals())
+
+# Configure Heroku's POSTGRES db
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)

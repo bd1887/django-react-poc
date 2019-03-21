@@ -23,7 +23,8 @@ def db_test(response):
     cursor = cnxn.cursor()
     # get one record from the database and print it 
     cursor.execute("select id, name from tbl_D17125388")
-    row = cursor.fetchone() 
+    row = cursor.fetchone()
+
     html = ""
 
     if row: 

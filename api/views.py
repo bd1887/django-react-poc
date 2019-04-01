@@ -12,17 +12,17 @@ import pyodbc
 # Create your views here.
 
 @api_view(['GET'])
-def azure_test(response):
+def azure_mean(request):
     data = azure_test()
     html = f"<h1>{data}</h1>"
     return HttpResponse(html)
 
 @api_view(['GET'])
-def db_test(response):
+def db_test(request):
     cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=natheandemos.database.windows.net;DATABASE=RianProjectDB1;UID=DIT265A_USR;PWD=479M1LZ5Uk')
     cursor = cnxn.cursor()
     # get one record from the database and print it 
-    cursor.execute("select id, name from tbl_D17125388")
+    cursor.execute("select * from tbl_D17125388")
     row = cursor.fetchone()
 
     html = ""

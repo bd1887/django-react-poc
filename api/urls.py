@@ -6,9 +6,9 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 
 urlpatterns = [
-    path("azure-test", views.azure_test, name="azure-test"),
-    path("db-test", views.db_test, name="db-test"),
-    path("grade-batch", grade_batch, name="grade-batch")
+    path("azure-mean/", views.azure_mean, name="azure-mean"),
+    path("db-test/", views.db_test, name="db-test"),
+    path("grade-batch/", grade_batch, name="grade-batch"),
 ]
 
 router.register(r'students', StudentViewSet, basename='student')
